@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ParticlesBg from "particles-bg";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -10,10 +11,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route
-            path="/h"
+            path="/"
             element={
               <>
-                <ParticlesBg num={5} color="#fa3b86" type="random" bg={true} />
+                <ParticlesBg num={1} color="#fa3b86" type="polygon" bg={true} />
 
                 <header className="App-header">
                   <p>
@@ -32,6 +33,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

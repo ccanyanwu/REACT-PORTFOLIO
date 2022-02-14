@@ -3,17 +3,17 @@
   "name": "CHUKWUEMEKA's PORTFOLIO",
   "icons": [
     {
-      "src": "https://res.cloudinary.com/trive/image/upload/v1644654414/portfolio.jpg",
+      "src": "https://res.cloudinary.com/trive/image/upload/v1644835302/portfolio.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "https://res.cloudinary.com/trive/image/upload/v1644654414/portfolio.jpg",
+      "src": "https://res.cloudinary.com/trive/image/upload/v1644835302/portfolio.jpg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://res.cloudinary.com/trive/image/upload/v1644654414/portfolio.jpg",
+      "src": "https://res.cloudinary.com/trive/image/upload/v1644835302/portfolio.jpg",
       "type": "image/png",
       "sizes": "512x512"
     }

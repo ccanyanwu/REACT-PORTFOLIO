@@ -1,7 +1,5 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import ParticlesBg from "particles-bg";
-
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -17,11 +15,7 @@ const Header = styled.header`
     margin: 2.4em 0 4.5em 0;
   }
   .name {
-    color: #fa3b86;
     font-size: 1rem;
-  }
-  .name:hover {
-    color: #ffffff;
   }
   a {
     text-transform: uppercase;
@@ -39,9 +33,6 @@ const Header = styled.header`
   .sem-none > div > .text-white:hover {
     background: ;
   }
-  .sem-none > div > .text-white:visited {
-    background: grey;
-  }
   img {
     height: 3.2em;
   }
@@ -53,7 +44,7 @@ const Header = styled.header`
     display: none;
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 62rem) {
     .name {
       display: none !important;
     }
@@ -71,12 +62,13 @@ const Header = styled.header`
       justify-content: space-between;
     }
     .hamburger {
+      cursor: pointer;
       flex-direction: column;
       padding: 1em 0;
       margin-left: 0;
     }
     .hamburger > div {
-      background-color: #fa3b86;
+      background-color: var(--skyBlue);
       width: 26px;
       height: 1px;
     }
@@ -90,7 +82,7 @@ const Header = styled.header`
     }
     section.nav-content {
       display: none;
-      background-color: #11052c;
+      background-color: var(--skyBlue);
       box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
       position: fixed;
       top: 0;
@@ -130,7 +122,7 @@ const Header = styled.header`
       margin-top: 3.6em;
     }
     section.nav-content a:hover {
-      background-color: var(--pink);
+      background-color: var(--background);
     }
 
     a {
@@ -138,6 +130,8 @@ const Header = styled.header`
     }
 
     section.nav-content .times {
+      color: var(--background);
+      cursor: pointer;
       position: absolute;
       right: 34px;
       font-size: 2em;
@@ -184,8 +178,10 @@ const Navbar = () => {
   return (
     <>
       <Header>
-
-        <Link to="/h" className="mt-1 h3 fw-bolder position-absolute name">
+        <Link
+          to="/"
+          className="mt-1 h3 fw-bolder text-white position-absolute name"
+        >
           CHUKWUEMEKA ANYANWU
         </Link>
         <nav className="sem-none">
@@ -217,16 +213,23 @@ const Navbar = () => {
             <div></div>
             <div></div>
           </div>
-          <img
-            className="sem-show"
-            src="https://res.cloudinary.com/trive/image/upload/v1644654414/portfolio.jpg"
-            alt="chukwuemeka anyanwu"
-          />
+          <Link to="/">
+            <img
+              className="sem-show"
+              src="https://res.cloudinary.com/trive/image/upload/v1644835302/portfolio.jpg"
+              alt="chukwuemeka anyanwu"
+            />
+          </Link>
         </nav>
         <div className="line"></div>
         <section className="nav-content" ref={hamburgerRef}>
           <div className="times" ref={hamburgerRefClose} onClick={closeMenu}>
             &times;
+          </div>
+          <div>
+            <Link to="/" className="text-uppercase text-white">
+              HOME
+            </Link>
           </div>
           <div>
             <Link to="/about" className="text-uppercase text-white">

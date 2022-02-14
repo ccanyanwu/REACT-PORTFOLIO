@@ -19,8 +19,8 @@
 
 /* css variables */
 :root{
-  --background:#11052c ;
-  --pink: #fa3b86;
+  --background:#15202B ;
+  --skyBlue: #1d9bf0;
 }
 
 /* CSS RESET */
@@ -34,7 +34,7 @@
 
 body {
   background: var(--background) ;
-  color: var(--pink);
+  color: #ffffff;
   font-family: Regular , 'sans-serif';
 }
 
