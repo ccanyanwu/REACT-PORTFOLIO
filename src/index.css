@@ -1,0 +1,41 @@
+/* Custom font import */
+
+@font-face {
+  font-family: "Bold";
+  src: local("Brandon_bld"), url(./fonts/Brandon_bld.otf) format("opentype");
+}
+@font-face {
+  font-family: "Regular";
+  src: local("Brandon_reg"), url(./fonts/Brandon_reg.otf) format("opentype");
+}
+@font-face {
+  font-family: "Brandon_light";
+  src: local("Brandon_light"), url(./fonts/Brandon_light.otf) format("opentype");
+}
+@font-face {
+  font-family: "thin";
+  src: local("Brandon_thin"), url(./fonts/Brandon_thin.otf) format("opentype");
+}
+
+/* css variables */
+:root{
+  --background:#11052c ;
+  --pink: #fa3b86;
+}
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background) ;
+  color: var(--pink);
+  font-family: Regular , 'sans-serif';
+}
+
+
