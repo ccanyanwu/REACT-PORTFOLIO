@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Header = styled.header`
    {
     font-family: Bold, "sans-serif";
+    z-index: 100;
   }
   nav {
     display: flex;
@@ -12,10 +13,11 @@ const Header = styled.header`
     align-items: center;
     min-width: 2px;
     justify-content: flex-end;
-    margin: 2.4em 0 4.5em 0;
+    margin: 2.4em 0 4.5em 38rem;
   }
   .name {
     font-size: 1rem;
+    margin-top: 2.4em;
   }
   a {
     text-transform: uppercase;
@@ -44,6 +46,12 @@ const Header = styled.header`
     display: none;
   }
 
+  @media (min-width: 62rem) and (max-width: 75rem) {
+    nav {
+      margin-left: 28rem;
+    }
+  }
+
   @media (max-width: 62rem) {
     .name {
       display: none !important;
@@ -61,14 +69,16 @@ const Header = styled.header`
     nav.sem-show {
       justify-content: space-between;
     }
+  
     .hamburger {
+      background: linear-gradient(rgba(21, 32, 43, 0.8), rgba(21, 32, 43, 0.9));
       cursor: pointer;
       flex-direction: column;
       padding: 1em 0;
       margin-left: 0;
     }
     .hamburger > div {
-      background-color: var(--skyBlue);
+      background-color: var(--secondary);
       width: 26px;
       height: 1px;
     }
@@ -80,9 +90,10 @@ const Header = styled.header`
       margin-left: 10px;
       margin-top: 8px;
     }
+
     section.nav-content {
       display: none;
-      background-color: var(--skyBlue);
+      background-color: var(--secondary);
       box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
       position: fixed;
       top: 0;
@@ -93,6 +104,7 @@ const Header = styled.header`
       animation-duration: 1s;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
+      z-index: 99;
     }
 
     @keyframes openMenu {
@@ -177,10 +189,10 @@ const Navbar = () => {
   useOutsideClick(wrapperRef);
   return (
     <>
-      <Header>
+      <Header className='position-fixed'>
         <Link
           to="/"
-          className="mt-1 h3 fw-bolder text-white position-absolute name"
+          className=" h3 fw-bolder text-white position-absolute name"
         >
           CHUKWUEMEKA ANYANWU
         </Link>
@@ -213,13 +225,7 @@ const Navbar = () => {
             <div></div>
             <div></div>
           </div>
-          <Link to="/">
-            <img
-              className="sem-show"
-              src="https://res.cloudinary.com/trive/image/upload/v1644835302/portfolio.jpg"
-              alt="chukwuemeka anyanwu"
-            />
-          </Link>
+          
         </nav>
         <div className="line"></div>
         <section className="nav-content" ref={hamburgerRef}>

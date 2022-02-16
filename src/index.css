@@ -19,8 +19,9 @@
 
 /* css variables */
 :root{
-  --background:#15202B ;
-  --skyBlue: #1d9bf0;
+  --background:#15202b ;
+  /* --secondary: #1d9bf0; */
+  --secondary: #f78931;
 }
 
 /* CSS RESET */
