@@ -45,6 +45,9 @@ const Header = styled.header`
     h2 {
       font-size: 1.75rem;
     }
+    hr + p {
+      font-size: 0.9rem;
+    }
   }
 
   @media all and (max-width: 48rem) {
@@ -65,9 +68,6 @@ const Header = styled.header`
     }
     hr {
       background: #ffffff;
-    }
-    hr + p {
-      font-size: 0.9rem;
     }
   }
 `;

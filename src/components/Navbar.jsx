@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -15,9 +15,11 @@ const Header = styled.header`
     justify-content: flex-end;
     margin: 2.4em 0 4.5em 38rem;
   }
-  .name {
+  .name,
+  .no-name {
     font-size: 1rem;
     margin-top: 2.4em;
+    transition: all 3.3s ease;
   }
   a {
     text-transform: uppercase;
@@ -32,8 +34,13 @@ const Header = styled.header`
   .sem-none > div > .text-white {
     transition: all 0.3s ease;
   }
+  .active {
+    text-decoration: underline solid var(--secondary);
+    text-decoration-thickness: 2px;
+    transition: all 1.3s ease;
+    background: var(--background);
+  }
   .sem-none > div > .text-white:hover {
-    background: ;
   }
   img {
     height: 3.2em;
@@ -42,6 +49,7 @@ const Header = styled.header`
     margin-left: 3.6em;
   }
   .sem-show,
+  .no-name,
   section.nav-content {
     display: none;
   }
@@ -69,7 +77,7 @@ const Header = styled.header`
     nav.sem-show {
       justify-content: space-between;
     }
-  
+
     .hamburger {
       background: linear-gradient(rgba(21, 32, 43, 0.8), rgba(21, 32, 43, 0.9));
       cursor: pointer;
@@ -154,9 +162,9 @@ const Header = styled.header`
 
 const Navbar = () => {
   const hamburgerRefClose = useRef(),
-    hamburgerRef = useRef();
+    hamburgerRef = useRef(),
+    location = useLocation();
   const wrapperRef = useRef();
-
   const closeMenu = () => {
     hamburgerRef.current.style.animationName = "closeMenu";
     setTimeout(() => {
@@ -189,31 +197,53 @@ const Navbar = () => {
   useOutsideClick(wrapperRef);
   return (
     <>
-      <Header className='position-fixed'>
+      <Header className="position-fixed">
         <Link
           to="/"
-          className=" h3 fw-bolder text-white position-absolute name"
+          className={` h3 fw-bolder text-white position-absolute ${
+            location.pathname === "/" ? "no-name" : "name"
+          }`}
         >
           CHUKWUEMEKA ANYANWU
         </Link>
         <nav className="sem-none">
           <div>
-            <Link to="/about" className="text-white">
+            <Link
+              to="/about"
+              className={`text-white ${
+                location.pathname === "/about" ? "active" : ""
+              }`}
+            >
               About
             </Link>
           </div>
           <div>
-            <Link to="/services" className="text-white">
+            <Link
+              to="/services"
+              className={`text-white ${
+                location.pathname === "/services" ? "active" : ""
+              }`}
+            >
               Services
             </Link>
           </div>
           <div>
-            <Link to="/projects" className="text-white">
+            <Link
+              to="/projects"
+              className={`text-white ${
+                location.pathname === "/projects" ? "active" : ""
+              }`}
+            >
               Projects
             </Link>
           </div>
           <div>
-            <Link to="/contact" className="text-white">
+            <Link
+              to="/contact"
+              className={`text-white ${
+                location.pathname === "/contact" ? "active" : ""
+              }`}
+            >
               Contact
             </Link>
           </div>
@@ -225,7 +255,6 @@ const Navbar = () => {
             <div></div>
             <div></div>
           </div>
-          
         </nav>
         <div className="line"></div>
         <section className="nav-content" ref={hamburgerRef}>
@@ -233,27 +262,40 @@ const Navbar = () => {
             &times;
           </div>
           <div>
-            <Link to="/" className="text-uppercase text-white">
+            <Link
+              to="/"
+              className={`text-white text-uppercase ${
+                location.pathname === "/" ? "active" : ""
+              }`}
+            >
               HOME
             </Link>
           </div>
           <div>
-            <Link to="/about" className="text-uppercase text-white">
+            <Link to="/about" className={`text-white text-uppercase ${
+                location.pathname === "/about" ? "active" : ""
+              }`}>
               ABOUT
             </Link>
           </div>
           <div>
-            <Link to="/services" className="text-uppercase text-white">
+            <Link to="/services" className={`text-white text-uppercase ${
+                location.pathname === "/services" ? "active" : ""
+              }`}>
               SERVICES
             </Link>
           </div>
           <div>
-            <Link to="/projects" className="text-uppercase text-white">
+            <Link to="/projects" className={`text-white text-uppercase ${
+                location.pathname === "/projects" ? "active" : ""
+              }`}>
               PROJECTS
             </Link>
           </div>
           <div>
-            <Link to="/contact" className="text-uppercase text-white">
+            <Link to="/contact" className={`text-white text-uppercase ${
+                location.pathname === "/contact" ? "active" : ""
+              }`}>
               CONTACT
             </Link>
           </div>
