@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const Header = styled.header`
    {
+    background: linear-gradient(rgba(21, 32, 43, .8), rgba(21, 32, 43, .9));
     font-family: Bold, "sans-serif";
     z-index: 100;
   }
@@ -18,7 +19,6 @@ const Header = styled.header`
   .name,
   .no-name {
     font-size: 1rem;
-    margin-top: 2.4em;
     transition: all 3.3s ease;
   }
   a {
@@ -197,7 +197,7 @@ const Navbar = () => {
   useOutsideClick(wrapperRef);
   return (
     <>
-      <Header className="position-fixed">
+      <Header className="sticky-top pb-1">
         <Link
           to="/"
           className={` h3 fw-bolder text-white position-absolute ${
@@ -229,12 +229,12 @@ const Navbar = () => {
           </div>
           <div>
             <Link
-              to="/projects"
+              to="/portfolio"
               className={`text-white ${
-                location.pathname === "/projects" ? "active" : ""
+                location.pathname === "/portfolio" ? "active" : ""
               }`}
             >
-              Projects
+              Portfolio
             </Link>
           </div>
           <div>
@@ -272,30 +272,42 @@ const Navbar = () => {
             </Link>
           </div>
           <div>
-            <Link to="/about" className={`text-white text-uppercase ${
+            <Link
+              to="/about"
+              className={`text-white text-uppercase ${
                 location.pathname === "/about" ? "active" : ""
-              }`}>
+              }`}
+            >
               ABOUT
             </Link>
           </div>
           <div>
-            <Link to="/services" className={`text-white text-uppercase ${
+            <Link
+              to="/services"
+              className={`text-white text-uppercase ${
                 location.pathname === "/services" ? "active" : ""
-              }`}>
+              }`}
+            >
               SERVICES
             </Link>
           </div>
           <div>
-            <Link to="/projects" className={`text-white text-uppercase ${
-                location.pathname === "/projects" ? "active" : ""
-              }`}>
-              PROJECTS
+            <Link
+              to="/portfolio"
+              className={`text-white text-uppercase ${
+                location.pathname === "/portfolio" ? "active" : ""
+              }`}
+            >
+              PORTFOLIO
             </Link>
           </div>
           <div>
-            <Link to="/contact" className={`text-white text-uppercase ${
+            <Link
+              to="/contact"
+              className={`text-white text-uppercase ${
                 location.pathname === "/contact" ? "active" : ""
-              }`}>
+              }`}
+            >
               CONTACT
             </Link>
           </div>

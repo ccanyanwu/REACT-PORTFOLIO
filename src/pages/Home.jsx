@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Header = styled.header`
    {
-    padding-top: 10rem;
+    paddig-top: 10rem;
   }
   h2,
   hr + p,
@@ -54,8 +54,7 @@ const Header = styled.header`
      {
       background: linear-gradient(rgba(21, 32, 43, 0.8), rgba(21, 32, 43, 0.9)),
         url(https://res.cloudinary.com/trive/image/upload/v1644835302/portfolio.jpg)
-          /*no-repeat center center fixed*/;
-      background-repeat: no-repeat;
+          no-repeat center center fixed;
       background-attachment: fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
@@ -95,7 +94,7 @@ const Home = () => {
           </p>
         </div>
         <p className="profile_summary text-white text-center text-sm-start mt-5">
-          Hi, I'm <span>Chukwuemeka</span> <br />A self-taught{" "}
+          Hi 👋🏾, I'm <span>Chukwuemeka</span> <br />A self-taught{" "}
           <span>Front-end </span>
           Engineer
           <br />
