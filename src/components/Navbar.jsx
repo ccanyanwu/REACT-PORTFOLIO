@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Header = styled.header`
    {
-    background: linear-gradient(rgba(21, 32, 43, .8), rgba(21, 32, 43, .9));
+    background: linear-gradient(rgba(21, 32, 43, 0.8), rgba(21, 32, 43, 0.9));
     font-family: Bold, "sans-serif";
     z-index: 100;
   }
@@ -19,6 +19,7 @@ const Header = styled.header`
   .name,
   .no-name {
     font-size: 1rem;
+    padding: 0.5rem;
     transition: all 3.3s ease;
   }
   a {
@@ -32,7 +33,13 @@ const Header = styled.header`
     font-weight: 600;
   }
   .sem-none > div > .text-white {
+    padding: 0.5rem;
     transition: all 0.3s ease;
+  }
+  .sem-none > div > .text-white:hover {
+    border-radius: .3rem;
+    background: var(--hover);
+    transition: all 0.5s ease-in;
   }
   .active {
     text-decoration: underline solid var(--secondary);
