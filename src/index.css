@@ -19,9 +19,11 @@
 
 /* css variables */
 :root{
-  --background:#15202b;
-   --secondary: #1d9bf0; 
-  --seconday: #f78931;
+  --bacground:#15202b !important;
+  --seondary:#1d9bf0 !important;
+
+  --background:#e3a173 !important;
+  --secondary:#293845 !important;
   --hover: rgb(36, 36, 36);
 }
 

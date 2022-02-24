@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Header = styled.header`
    {
-    background: linear-gradient(rgba(21, 32, 43, 0.8), rgba(21, 32, 43, 0.9));
+    background: linear-gradient(rgba(227, 161, 115, 0.8), rgba(227, 161, 115, 0.9));
     font-family: Bold, "sans-serif";
     z-index: 100;
   }
@@ -50,7 +50,9 @@ const Header = styled.header`
   .sem-none > div > .text-white:hover {
   }
   img {
+    border-radius: 50%;
     height: 3.2em;
+    width: 3.2em;
   }
   .sem-none > * {
     margin-left: 3.6em;
@@ -86,7 +88,6 @@ const Header = styled.header`
     }
 
     .hamburger {
-      background: linear-gradient(rgba(21, 32, 43, 0.8), rgba(21, 32, 43, 0.9));
       cursor: pointer;
       flex-direction: column;
       padding: 1em 0;
@@ -172,6 +173,12 @@ const Navbar = () => {
     hamburgerRef = useRef(),
     location = useLocation();
   const wrapperRef = useRef();
+  const portfolioPathname = [
+    "/portfolio/all",
+    "/portfolio/react",
+    "/portfolio/js",
+    "/portfolio/html",
+  ];
   const closeMenu = () => {
     hamburgerRef.current.style.animationName = "closeMenu";
     setTimeout(() => {
@@ -238,7 +245,7 @@ const Navbar = () => {
             <Link
               to="/portfolio"
               className={`text-white ${
-                location.pathname === "/portfolio" ? "active" : ""
+                portfolioPathname.includes(location.pathname) ? "active" : ""
               }`}
             >
               Portfolio
@@ -262,6 +269,13 @@ const Navbar = () => {
             <div></div>
             <div></div>
           </div>
+          <Link to="/">
+            <img
+              className="img-fluid hide col-md-3 d-block rounded-circle"
+              src="https://res.cloudinary.com/trive/image/upload/v1645427737/imageedit_1_2762711690.png"
+              alt="steve Emmanuel headshot "
+            />
+          </Link>
         </nav>
         <div className="line"></div>
         <section className="nav-content" ref={hamburgerRef}>
@@ -302,7 +316,7 @@ const Navbar = () => {
             <Link
               to="/portfolio"
               className={`text-white text-uppercase ${
-                location.pathname === "/portfolio" ? "active" : ""
+                portfolioPathname.includes(location.pathname) ? "active" : ""
               }`}
             >
               PORTFOLIO
