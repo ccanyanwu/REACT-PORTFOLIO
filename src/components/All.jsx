@@ -91,11 +91,12 @@ const Section = styled.section`
   }
 `;
 
-const All = () => {
+const All = ({ stack }) => {  
+  const portfolio = Projects.filter((project) => project.stack.includes(stack));
 
   return (
     <Section className="diflex flex-wrap row justify-content-around mt-5">
-      {Projects.map((project) => (
+      {portfolio.map((project) => (
         <div
           key={project.name}
           className="  card border-0 position-relative overflow-hidden shadow-lg d-flex justify-content-center align-items-center mb-4"

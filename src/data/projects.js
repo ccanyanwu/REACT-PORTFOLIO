@@ -1,6 +1,6 @@
 export const Projects = [
   {
-    stack: "react",
+    stack: ["all", "react"],
     name: "House Marketplace",
     description:
       "A web app for users to register and list their apartments/homes for rent/sale. People who are interested can also reach out to the landlords personally. There are also offers on some listings with reasonable discounts.",
@@ -9,7 +9,7 @@ export const Projects = [
     live: "https://housemarketplace.netlify.app",
   },
   {
-    stack: "react",
+    stack: ["all", "react"],
     name: "Github Finder",
     description:
       "A web app for users to register and list their apartments/homes for rent/sale. People who are interested can also reach out to the landlords personally. There are also offers on some listings with reasonable discounts.",
@@ -18,7 +18,7 @@ export const Projects = [
     live: "https://housemarketplace.netlify.app",
   },
   {
-    stack: "react",
+    stack: ["all", "javascript"],
     name: "Feedback App",
     description:
       "A web app for users to register and list their apartments/homes for rent/sale. People who are interested can also reach out to the landlords personally. There are also offers on some listings with reasonable discounts.",
