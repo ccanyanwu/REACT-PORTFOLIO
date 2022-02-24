@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import resume from "../resume/Resume.pdf";
 import ParticlesBg from "particles-bg";
 import styled from "styled-components";

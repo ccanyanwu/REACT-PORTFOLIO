@@ -173,12 +173,7 @@ const Navbar = () => {
     hamburgerRef = useRef(),
     location = useLocation();
   const wrapperRef = useRef();
-  const portfolioPathname = [
-    "/portfolio/all",
-    "/portfolio/react",
-    "/portfolio/js",
-    "/portfolio/html",
-  ];
+
   const closeMenu = () => {
     hamburgerRef.current.style.animationName = "closeMenu";
     setTimeout(() => {
@@ -225,7 +220,7 @@ const Navbar = () => {
             <Link
               to="/about"
               className={`text-white ${
-                location.pathname === "/about" ? "active" : ""
+                location.pathname === "/about" && "active"
               }`}
             >
               About
@@ -235,7 +230,7 @@ const Navbar = () => {
             <Link
               to="/services"
               className={`text-white ${
-                location.pathname === "/services" ? "active" : ""
+                location.pathname === "/services" && "active"
               }`}
             >
               Services
@@ -245,7 +240,7 @@ const Navbar = () => {
             <Link
               to="/portfolio"
               className={`text-white ${
-                portfolioPathname.includes(location.pathname) ? "active" : ""
+                location.pathname === "/portfolio" && "active"
               }`}
             >
               Portfolio
@@ -255,7 +250,7 @@ const Navbar = () => {
             <Link
               to="/contact"
               className={`text-white ${
-                location.pathname === "/contact" ? "active" : ""
+                location.pathname === "/contact" && "active"
               }`}
             >
               Contact
@@ -286,7 +281,7 @@ const Navbar = () => {
             <Link
               to="/"
               className={`text-white text-uppercase ${
-                location.pathname === "/" ? "active" : ""
+                location.pathname === "/" && "active"
               }`}
             >
               HOME
@@ -296,7 +291,7 @@ const Navbar = () => {
             <Link
               to="/about"
               className={`text-white text-uppercase ${
-                location.pathname === "/about" ? "active" : ""
+                location.pathname === "/about" && "active"
               }`}
             >
               ABOUT
@@ -306,7 +301,7 @@ const Navbar = () => {
             <Link
               to="/services"
               className={`text-white text-uppercase ${
-                location.pathname === "/services" ? "active" : ""
+                location.pathname === "/services" && "active"
               }`}
             >
               SERVICES
@@ -316,7 +311,7 @@ const Navbar = () => {
             <Link
               to="/portfolio"
               className={`text-white text-uppercase ${
-                portfolioPathname.includes(location.pathname) ? "active" : ""
+                location.pathname === "/portfolio" && "active"
               }`}
             >
               PORTFOLIO

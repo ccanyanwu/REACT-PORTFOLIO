@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { useEffect } from 'react';
-import {Link, Outlet, useNavigate, useLocation} from 'react-router-dom'
+import styled from "styled-components";
+import { useState } from "react";
+import All from "../components/All";
 
 const Section = styled.section`
   h1,
@@ -50,7 +50,8 @@ const Section = styled.section`
 
   .btn-nav {
     box-shadow: none;
-    color: #ffffff;  }
+    color: #ffffff;
+  }
 
   .active {
     background-color: var(--secondary) !important;
@@ -59,12 +60,7 @@ const Section = styled.section`
 `;
 
 const Portfolio = () => {
-  const navigate = useNavigate(); 
-  let location = useLocation();
-
-  useEffect(() => {
-    if(location.pathname === '/portfolio') return navigate('/portfolio/all')
-  }, [location, navigate])
+  const [stack, setStack] = useState("all");
 
   return (
     <Section>
@@ -74,54 +70,40 @@ const Portfolio = () => {
 
       <section>
         <div className="tab-nav">
-          <Link
-            to="all"
-            className={ ` ${
-              location.pathname === "/portfolio/all"
-                ? "active"
-                : null
-            }`}
+          <div
+            onClick={() => setStack("all")}
+            className={` ${stack === "all" ? "active" : null}`}
           >
             <button className="btn btn-nav ">All</button>
-          </Link>
+          </div>
 
-          <Link
-            to="react"
-            className={
-              location.pathname === "/portfolio/react"
-                ? "active rounded"
-                : null
-            }
+          <div
+            onClick={() => setStack("react")}
+            className={stack === "react" ? "active rounded" : null}
           >
             <button className="btn btn-nav">React</button>
-          </Link>
+          </div>
 
-          <Link
-            to="js"
-            className={
-              location.pathname === "/portfolio/js"
-                ? "active rounded"
-                : null
-            }
+          <div
+            onClick={() => setStack("javascript")}
+            className={stack === "javascript" ? "active rounded" : null}
           >
             <button className="btn btn-nav">Javascript</button>
-          </Link>
+          </div>
 
-          <Link
-            to="html"
-            className={
-              location.pathname === "/portfolio/html"
-                ? "active rounded"
-                : null
-            }
+          <div
+            onClick={() => setStack("html")}
+            className={stack === "html" ? "active rounded" : null}
           >
             <button className="btn btn-nav">HTML/CSS</button>
-          </Link>
+          </div>
         </div>
       </section>
-      <Outlet />
+      
+      {/* featured Projects */}
+      <All stack={stack} />
     </Section>
   );
-}
+};
 
-export default Portfolio
+export default Portfolio;
