@@ -110,13 +110,12 @@ const Home = () => {
         <span>W</span>U <br />
         <span>C</span>H<span>U</span>K<span>Wu</span>EM
         <span>E</span>K<span>A</span>
-        <br />
-        C<span>OL</span>LI<span>N</span>S
+        <br />C<span>OL</span>LI<span>N</span>S
       </h2>
       <img
         className="img-fluid hide col-md-3 d-block rounded h-100"
-        src="https://res.cloudinary.com/trive/image/upload/v1645427737/imageedit_1_2762711690.png"
-        alt="steve Emmanuel headshot "
+        src="https://res.cloudinary.com/trive/image/upload/f_auto,q_auto:eco/v1645427737/imageedit_1_2762711690.png"
+        alt="chukwuemeka anyanwu" loading='lazy'
       />
 
       <div className="col-12 col-md-4">

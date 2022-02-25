@@ -36,7 +36,7 @@ const Section = styled.section`
   .tab-nav > *::before {
     top: 100%;
     left: 100%;
-    transition: all 0.3s;
+    transition: all .73s;
   }
   .tab-nav > * > button:hover {
     color: #ffffff;
@@ -45,8 +45,7 @@ const Section = styled.section`
     top: -30px;
     left: -30px;
   }
-  button:active::before {
-  }
+  
 
   .btn-nav {
     box-shadow: none;
@@ -55,7 +54,13 @@ const Section = styled.section`
 
   .active {
     background-color: var(--secondary) !important;
-    transition: all 0.3s ease;
+    transition: all .3s ease;
+  }
+
+  @media all and (max-width: 400px) {
+    .tab-nav > * {
+      width: 6em;
+    }
   }
 `;
 
@@ -69,7 +74,7 @@ const Portfolio = () => {
       </h1>
 
       <section>
-        <div className="tab-nav">
+        <div className="tab-nav d-flex flex-wrap justify-content-center justify-lg-content-start">
           <div
             onClick={() => setStack("all")}
             className={` ${stack === "all" ? "active" : null}`}
@@ -92,6 +97,13 @@ const Portfolio = () => {
           </div>
 
           <div
+            onClick={() => setStack("node")}
+            className={stack === "node" ? "active rounded" : null}
+          >
+            <button className="btn btn-nav">NodeJS</button>
+          </div>
+
+          <div
             onClick={() => setStack("html")}
             className={stack === "html" ? "active rounded" : null}
           >
@@ -99,7 +111,7 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-      
+
       {/* featured Projects */}
       <All stack={stack} />
     </Section>
