@@ -5,21 +5,20 @@ import { Projects } from "../data/projects";
 const Section = styled.section`
   .card {
     border-radius: 10px;
-    background: url(https://res.cloudinary.com/trive/image/upload/f_auto,q_auto:eco/v1645523710/react1.png)
-      no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     position: relative;
-    width: 550px;
+    width: 300px !important;
     height: 400px;
     cursor: pointer;
     transition: 0.3s linear;
   }
+
+  img {
+    width: 300px !important;
+    height: 400px;
+  }
   .card::after {
     content: "";
-    background: rgba(21, 32, 43, 0.8);
+    background: rgba(21, 32, 43, 0.85);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -42,19 +41,23 @@ const Section = styled.section`
     align-self: start;
   }
 
+  .content > p {
+    text-align: justify;
+  }
+
   .content::after {
     content: "";
     background: var(--background);
     width: 0%;
     height: 2px;
     position: absolute;
-    top: 13%;
+    top: 8%;
     transition: 0.3s linear;
-    left: 5%;
+    left: 8%;
   }
 
   .tools {
-    font-size: 1.25em;
+    font-size: 0.85em;
     font-family: Regular, "sans-serif";
   }
   .links > a {
@@ -65,7 +68,7 @@ const Section = styled.section`
   }
 
   .card:hover .content {
-    top: 30%;
+    top: 3%;
   }
 
   .card:hover::after {
@@ -76,31 +79,31 @@ const Section = styled.section`
     width: 80%;
   }
 
-  @media all and (max-width: 570px) {
+  @media all and (max-width: 475px) {
     .card {
-      width: 300px;
-      height: 400px;
-    }
-  }
-
-  @media all and (max-width: 375px) {
-    .card {
-      width: 250px;
+      width: 290px;
       height: 350px;
     }
   }
 `;
 
-const All = ({ stack }) => {  
+const All = ({ stack }) => {
   const portfolio = Projects.filter((project) => project.stack.includes(stack));
 
   return (
-    <Section className="diflex flex-wrap row justify-content-around mt-5">
+    <Section className="d-flex flex-wrap row justify-content-around mt-5">
       {portfolio.map((project) => (
         <div
           key={project.name}
           className="  card border-0 position-relative overflow-hidden shadow-lg d-flex justify-content-center align-items-center mb-4"
         >
+          <img
+            loading="lazy"
+            src={project.image}
+            alt={project.name}
+            style={{ width: "450px" }}
+          />
+
           <div className="content text-white position-absolute w-100 d-flex flex-column justify-content-center align-items-center">
             <h3 className="fw-bolder">{project.name}</h3>
 
@@ -110,23 +113,28 @@ const All = ({ stack }) => {
               {project.tools.map((tool) => (
                 <span
                   key={tool}
-                  className="badge bg-info fw-lighter tools me-3"
+                  className="badge bg-info fw-lighter d-block mb-3 tools me-3"
                 >
                   {tool}
                 </span>
               ))}
             </div>
 
-            <div className="links fs-1 me-auto mt-3 text-white">
+            <div className="links fs-1 me-auto mt-1 text-white">
               <a
                 href={project.github}
                 target="_blank"
                 rel="noreferrer"
-                className="me-3"
+                className="me-3 fs-4"
               >
                 <FiGithub />
               </a>
-              <a href={project.live} target="_blank" rel="noreferrer">
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer"
+                className="fs-4"
+              >
                 <FiExternalLink />
               </a>
             </div>

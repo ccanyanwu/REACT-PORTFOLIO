@@ -33,6 +33,7 @@ const About = () => {
     <Section className="row d-flex flex-column-reverse flex-lg-row">
       <div className="img-fluid mx-auto d-block  align-self-center col-12 col-lg-4">
         <img
+        loading='lazy'
           src="https://res.cloudinary.com/trive/image/upload/f_auto,q_auto:eco/v1645107738/IMG_20201206_102201.jpg"
           alt="chukwuemeka collins anyanwu"
         />
