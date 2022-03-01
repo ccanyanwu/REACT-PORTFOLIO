@@ -186,13 +186,10 @@ const Contact = () => {
             <input
               type="hidden"
               name="_next"
-              value="http://localhost:3001/contact"
+              value="https://ccanyanwu.netlify.app/contact"
             />
-            <input
-              type="hidden"
-              name="_subject"
-              value="Portfolio Email"
-            />
+            <input type="hidden" name="_subject" value="Portfolio Email" />
+            <input type="text" name="_honey" style={{ display: "none" }} />
             <div className="form-item">
               <input type="email" name="email" required />
               <label>
@@ -232,22 +229,38 @@ const Contact = () => {
           <p>Feeling social? Find me on these online spaces too!</p>
           <div className="links d-flex flex-wrap justify-content-center">
             <div className="link">
-              <a>
+              <a
+                href="https://twitter.com/thryvee"
+                target="blank"
+                rel="noreferrer"
+              >
                 <FiTwitter />
               </a>
             </div>
             <div className="link">
-              <a>
+              <a
+                href="https://github.com/ccanyanwu"
+                target="blank"
+                rel="noreferrer"
+              >
                 <FiGithub />
               </a>
             </div>
             <div className="link">
-              <a>
+              <a
+                href="https://linkedin.com/in/anyanwucc"
+                target="blank"
+                rel="noreferrer"
+              >
                 <FiLinkedin />
               </a>
             </div>
             <div className="link">
-              <a>
+              <a
+                href="https://facebook.com.com/ccanyanwu"
+                target="blank"
+                rel="noreferrer"
+              >
                 <FiFacebook alt="email" />
               </a>
             </div>
