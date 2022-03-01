@@ -11,7 +11,7 @@ const Section = styled.section`
 
   .contact-box {
     width: 90%;
-    margin: 80px auto !important;
+    margin: 1.25rem auto .75rem !important;
   }
 
   .contact-links,
@@ -173,13 +173,26 @@ const Contact = () => {
 
       <div className="contact-box d-flex flex-wrap">
         <div className="contact-form-wrapper w-50">
-          <form>
+          <form
+            action="https://formsubmit.co/104c1659ad06ee87d37b40c81273ba69"
+            method="POST"
+          >
             <div className="form-item">
               <input type="text" name="sender" required />
               <label>
                 Name<span className="text-danger">*</span>
               </label>
             </div>
+            <input
+              type="hidden"
+              name="_next"
+              value="http://localhost:3001/contact"
+            />
+            <input
+              type="hidden"
+              name="_subject"
+              value="Portfolio Email"
+            />
             <div className="form-item">
               <input type="email" name="email" required />
               <label>
