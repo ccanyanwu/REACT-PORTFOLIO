@@ -101,3 +101,4 @@ export const Projects = [
     live: "https://hi-praise.netlify.app",
   },
 ];
+
