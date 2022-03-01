@@ -186,13 +186,14 @@ const Contact = () => {
             <input
               type="hidden"
               name="_next"
-              value="http://localhost:3001/contact"
+              value="https://ccanyanwu.netlify.app/contact"
             />
             <input
               type="hidden"
               name="_subject"
               value="Portfolio Email"
             />
+            <input type="text" name="_honey" style={{ display: 'none' }} />
             <div className="form-item">
               <input type="email" name="email" required />
               <label>
