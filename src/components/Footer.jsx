@@ -5,7 +5,8 @@ const Foot = styled.footer`
    {
     border-color: var(--secondary) !important;
   }
-  a, a:visited{
+  a,
+  a:visited {
     color: #ffffff;
   }
   div:first-child {

@@ -4,7 +4,10 @@ import styled from "styled-components";
 
 const Header = styled.header`
    {
-    background: linear-gradient(rgba(227, 161, 115, 0.8), rgba(227, 161, 115, 0.9));
+    background: linear-gradient(
+      rgba(227, 161, 115, 0.8),
+      rgba(227, 161, 115, 0.9)
+    );
     font-family: Bold, "sans-serif";
     z-index: 100;
   }
@@ -37,7 +40,7 @@ const Header = styled.header`
     transition: all 0.3s ease;
   }
   .sem-none > div > .text-white:hover {
-    border-radius: .3rem;
+    border-radius: 0.3rem;
     background: var(--hover);
     transition: all 0.5s ease-in;
   }
@@ -111,6 +114,7 @@ const Header = styled.header`
       display: none;
       background-color: var(--secondary);
       box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.1);
+      overflow-y: scroll;
       position: fixed;
       top: 0;
       left: 0;
