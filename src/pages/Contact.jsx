@@ -41,7 +41,7 @@ const Section = styled.section`
   }
 
   .links {
-    padding-top: 50px;
+    padding-top: 1.5rem;
   }
 
   .link {
