@@ -3,6 +3,10 @@ import { FiGithub, FiTwitter, FiLinkedin, FiFacebook } from "react-icons/fi";
 
 
 const Section = styled.section`
+  a,
+  a:visited {
+    color: #ffffff;
+  }
   .form-para {
     color: var(--secondary);
     font-size: 1rem;
@@ -11,7 +15,7 @@ const Section = styled.section`
 
   .contact-box {
     width: 90%;
-    margin: 1.25rem auto .75rem !important;
+    margin: 1.25rem auto 0.75rem !important;
   }
 
   .contact-links,
@@ -19,6 +23,9 @@ const Section = styled.section`
     padding: 8% 5% 10% 5%;
   }
 
+  .contact-links > p{
+    font-size: 2rem;
+  } 
   @media only screen and (max-width: 800px) {
     .contact-links,
     .contact-form-wrapper {
