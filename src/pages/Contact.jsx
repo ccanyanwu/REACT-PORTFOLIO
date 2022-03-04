@@ -1,6 +1,8 @@
+import emailjs from "emailjs-com";
+import { useRef } from "react";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 import { FiGithub, FiTwitter, FiLinkedin, FiFacebook } from "react-icons/fi";
-
 
 const Section = styled.section`
   a,
@@ -164,6 +166,29 @@ const Section = styled.section`
 `;
 
 const Contact = () => {
+  const senderRef = useRef(),
+    emailRef = useRef(),
+    messageRef = useRef();
+  const service = process.env.REACT_APP_SERVICE,
+    template = process.env.REACT_APP_TEMPLATE,
+    id = process.env.REACT_APP_ID;
+
+  //send email
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(service, template, e.target, id)
+      .then((res) => {
+        senderRef.current.value = "";
+        emailRef.current.value = "";
+        messageRef.current.value = "";
+
+        toast.success("message sent successfully");
+      })
+      .catch((error) => toast.error("could not send message"));
+  };
+
   return (
     <Section>
       <h1 className="display-4">Get In Touch</h1>
@@ -180,31 +205,21 @@ const Contact = () => {
 
       <div className="contact-box d-flex flex-wrap">
         <div className="contact-form-wrapper w-50">
-          <form
-            action="https://formsubmit.co/104c1659ad06ee87d37b40c81273ba69"
-            method="POST"
-          >
+          <form onSubmit={sendEmail}>
             <div className="form-item">
-              <input type="text" name="sender" required />
+              <input type="text" name="sender" ref={senderRef} required />
               <label>
                 Name<span className="text-danger">*</span>
               </label>
             </div>
-            <input
-              type="hidden"
-              name="_next"
-              value="https://ccanyanwu.netlify.app/contact"
-            />
-            <input type="hidden" name="_subject" value="Portfolio Email" />
-            <input type="text" name="_honey" style={{ display: "none" }} />
             <div className="form-item">
-              <input type="email" name="email" required />
+              <input type="email" name="email" ref={emailRef} required />
               <label>
                 Email<span className="text-danger">*</span>
               </label>
             </div>
             <div className="form-item">
-              <textarea name="message" required></textarea>
+              <textarea name="message" ref={messageRef} required></textarea>
               <label>
                 Message<span className="text-danger">*</span>
               </label>
