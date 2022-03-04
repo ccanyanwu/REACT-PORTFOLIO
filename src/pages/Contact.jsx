@@ -5,6 +5,10 @@ import styled from "styled-components";
 import { FiGithub, FiTwitter, FiLinkedin, FiFacebook } from "react-icons/fi";
 
 const Section = styled.section`
+  a,
+  a:visited {
+    color: #ffffff;
+  }
   .form-para {
     color: var(--secondary);
     font-size: 1rem;
@@ -21,6 +25,9 @@ const Section = styled.section`
     padding: 8% 5% 10% 5%;
   }
 
+  .contact-links > p{
+    font-size: 2rem;
+  } 
   @media only screen and (max-width: 800px) {
     .contact-links,
     .contact-form-wrapper {
@@ -36,7 +43,7 @@ const Section = styled.section`
   }
 
   .links {
-    padding-top: 50px;
+    padding-top: 1.5rem;
   }
 
   .link {
