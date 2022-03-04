@@ -1,6 +1,8 @@
+import emailjs from "emailjs-com";
+import { useRef } from "react";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 import { FiGithub, FiTwitter, FiLinkedin, FiFacebook } from "react-icons/fi";
-
 
 const Section = styled.section`
   a,
@@ -12,52 +14,43 @@ const Section = styled.section`
     font-size: 1rem;
     line-height: 1.55;
   }
-
   .contact-box {
     width: 90%;
     margin: 1.25rem auto 0.75rem !important;
   }
-
   .contact-links,
   .contact-form-wrapper {
     padding: 8% 5% 10% 5%;
   }
-
-  .contact-links > p{
+  .contact-links > p {
     font-size: 2rem;
-  } 
+  }
   @media only screen and (max-width: 800px) {
     .contact-links,
     .contact-form-wrapper {
       width: 100% !important;
     }
   }
-
   @media only screen and (max-width: 400px) {
     .contact-box {
       width: 95%;
       marin: 8% auto !important;
     }
   }
-
   .links {
     padding-top: 1.5rem;
   }
-
   .link {
     margin: 10px;
     cursor: pointer;
   }
-
   .link > a {
     font-size: 2rem;
     transition: 0.2s;
   }
-
   .form-item {
     position: relative;
   }
-
   label {
     position: absolute;
     top: 10px;
@@ -65,7 +58,6 @@ const Section = styled.section`
     color: #999;
     font-size: clamp(14px, 1.5vw, 18px);
   }
-
   input,
   textarea {
     width: 100%;
@@ -76,7 +68,6 @@ const Section = styled.section`
     padding: 12px;
     font-size: clamp(15px, 1.5vw, 18px);
   }
-
   input:focus + label,
   input:valid + label,
   textarea:focus + label,
@@ -86,11 +77,9 @@ const Section = styled.section`
     top: -20px;
     transition: all 0.225s ease;
   }
-
   textarea {
     height: 9rem;
   }
-
   .submit-btn {
     font-size: 20px;
     background: var(--secondary);
@@ -102,60 +91,48 @@ const Section = styled.section`
     overflow: hidden;
     transition: all 0.2s;
   }
-
   .submit-btn > span {
     display: block;
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
   }
-
   .submit-btn > svg {
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
   }
-
   .submit-btn:hover .svg-wrapper {
     animation: fly-1 0.6s ease-in-out infinite alternate;
   }
-
   .submit-btn:hover svg {
     transform: translateX(1.2em) rotate(45deg) scale(1.1);
   }
-
   .submit-btn:hover span {
     transform: translateX(5em);
   }
-
   .submit-btn::active {
     transform: scale(0.95) !important;
   }
-
   @keyframes fly-1 {
     from {
       transform: translateY(0.1em);
     }
-
     to {
       transform: translateY(-0.1em);
     }
   }
-
   @media only screen and (max-width: 800px) {
     h2 {
       font-size: clamp(40px, 10vw, 60px);
     }
   }
-
   @media only screen and (max-width: 400px) {
     h2 {
       font-size: clamp(30px, 12vw, 60px);
     }
-
     .links {
       padding-top: 30px;
     }
-
     img {
       width: 38px;
       height: 38px;
@@ -164,6 +141,29 @@ const Section = styled.section`
 `;
 
 const Contact = () => {
+  const senderRef = useRef(),
+    emailRef = useRef(),
+    messageRef = useRef();
+  const service = process.env.REACT_APP_SERVICE,
+    template = process.env.REACT_APP_TEMPLATE,
+    id = process.env.REACT_APP_ID;
+
+  //send email
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(service, template, e.target, id)
+      .then((res) => {
+        senderRef.current.value = "";
+        emailRef.current.value = "";
+        messageRef.current.value = "";
+
+        toast.success("message sent successfully");
+      })
+      .catch((error) => toast.error("could not send message"));
+  };
+
   return (
     <Section>
       <h1 className="display-4">Get In Touch</h1>
@@ -180,31 +180,21 @@ const Contact = () => {
 
       <div className="contact-box d-flex flex-wrap">
         <div className="contact-form-wrapper w-50">
-          <form
-            action="https://formsubmit.co/104c1659ad06ee87d37b40c81273ba69"
-            method="POST"
-          >
+          <form onSubmit={sendEmail}>
             <div className="form-item">
-              <input type="text" name="sender" required />
+              <input type="text" name="sender" ref={senderRef} required />
               <label>
                 Name<span className="text-danger">*</span>
               </label>
             </div>
-            <input
-              type="hidden"
-              name="_next"
-              value="https://ccanyanwu.netlify.app/contact"
-            />
-            <input type="hidden" name="_subject" value="Portfolio Email" />
-            <input type="text" name="_honey" style={{ display: "none" }} />
             <div className="form-item">
-              <input type="email" name="email" required />
+              <input type="email" name="email" ref={emailRef} required />
               <label>
                 Email<span className="text-danger">*</span>
               </label>
             </div>
             <div className="form-item">
-              <textarea name="message" required></textarea>
+              <textarea name="message" ref={messageRef} required></textarea>
               <label>
                 Message<span className="text-danger">*</span>
               </label>
