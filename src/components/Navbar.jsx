@@ -50,12 +50,11 @@ const Header = styled.header`
     transition: all 1.3s ease;
     background: var(--background);
   }
-  .sem-none > div > .text-white:hover {
-  }
+  
   img {
     border-radius: 50%;
-    height: 3.2em;
-    width: 3.2em;
+    height: 2.2em;
+    width: 2.2em;
   }
   .sem-none > * {
     margin-left: 3.6em;

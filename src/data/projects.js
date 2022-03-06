@@ -49,7 +49,7 @@ export const Projects = [
     image:
       "https://res.cloudinary.com/trive/image/upload/f_auto,q_auto:eco/v1645786473/expenditure.png",
     description:
-      "Expenditure tracker app helps managers in the company's  departments manage and keep a record of all company expenses spent by employees. The type of expense, category, date, time and much more can be tracked by managers using this app. There is also of role based access in place, giving managers privileges review expenses.",
+      "Expenditure tracker app helps managers in the company's  departments manage and keep a record of all company expenses spent by employees. The type of expense, category, date, time and much more can be tracked by managers using this app.",
     tools: ["NodeJS", "ExpressJs", "Bootstrap"],
     github: "https://github.com/ccanyanwu/EXPENSE-TRACKING-APPLICATION",
     live: "https://expendituretracker.herokuapp.com/",
@@ -71,7 +71,7 @@ export const Projects = [
     image:
       "https://res.cloudinary.com/trive/image/upload/f_auto,q_auto:eco/v1645788240/calculator.png",
     description:
-      "Quik Calc can be used in performing basic mathematical operations such as addition, division, multiplication and subtraction. On an attempt to make wrong operations, an error is displayed to the user of a few seconds. It can also take large numbers as input for operations. This app was built with vanilla javascript",
+      "Quik Calc can be used in performing basic mathematical operations such as addition, division, multiplication and subtraction. On an attempt to make wrong operations, an error is displayed to the user for a few seconds.",
     tools: ["javaScript", "CSS3"],
     github:
       "https://github.com/ccanyanwu/IGhub-Frontend-Assignment-/tree/Calcagba",
