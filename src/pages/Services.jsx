@@ -1,6 +1,18 @@
 import styled from "styled-components";
 import { MdLaptopMac, MdPhonelink } from "react-icons/md";
 import { IoRocketOutline } from 'react-icons/io5';
+import { FaCogs, FaTerminal } from "react-icons/fa";
+import {
+  DiHtml5,
+  DiCss3,
+  DiJavascript1,
+  DiReact,
+  DiGit,
+  DiGithubBadge,
+  DiBootstrap,
+  DiVisualstudio,
+  DiW3C,
+} from "react-icons/di";
 
 
 const Section = styled.section`
@@ -14,12 +26,29 @@ const Section = styled.section`
     color: var(--background);
     font-size: 7rem;
   }
+  .flex-wrap > div{
+    margin: 1rem;
+  }
+  .fs-3,
+  .lead,
+  .tool > :last-child {
+    color: var(--secondary);
+  }
+  .tool > :first-child {
+    font-size: 5.5rem;
+  }
+  .tool > :first-child:hover {
+    transform: rotate(0.13turn);
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+  }
+  
 `;
 
 const Services = () => {
   return (
     <Section>
-      <h1 className="display-4 text-center ">Services Offered</h1>
+      <h1 className="display-3 text-center ">Services Offered</h1>
 
       <p className=" lead text-center mx-auto">
         Web development has been my bread and butter for more than 3 years now.
@@ -51,7 +80,9 @@ const Services = () => {
                 RESPONSIVENESS
               </h5>
               <p className="card-text text-center">
-                My codes always come out pixel perfect and my layouts well suited for any device, without the need to zoom-out or  zoom-in as the case may be
+                My codes always come out pixel perfect and my layouts well
+                suited for any device, without the need to zoom-out or zoom-in
+                as the case may be
               </p>
             </div>
           </div>
@@ -68,6 +99,67 @@ const Services = () => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <h2 className="display-4 mt-5">My Toolbox</h2>
+      <p className="fs-3 text-start mx-auto">
+        The skills, tools and technologies I use to bring your products to life:
+      </p>
+      <div className="d-flex flex-wrap justify-content-evenly">
+        <div className="text-center tool p-2">
+          <DiHtml5 />
+          <p className="mt-2 fw-bolder">HTML5</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <DiCss3 />
+          <p className="mt-2 fw-bolder">CSS3</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <DiJavascript1 />
+          <p className="mt-2 fw-bolder">JavaScript</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <DiReact />
+          <p className="mt-2 fw-bolder">React</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <DiGit />
+          <p className="mt-2 fw-bolder">Git</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <DiGithubBadge />
+          <p className="mt-2 fw-bolder">Github</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <FaCogs />
+          <p className="mt-2 fw-bolder">RESTful APIs</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <DiBootstrap />
+          <p className="mt-2 fw-bolder">Bootstrap</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <DiVisualstudio />
+          <p className="mt-2 fw-bolder">VS Code</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <DiW3C />
+          <p className="mt-2 fw-bolder">Web Accessibility</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <FaTerminal />
+          <p className="mt-2 fw-bolder">Command Line</p>
         </div>
       </div>
     </Section>
