@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { useContext } from "react";
-import { ThemeContext } from "../context";
 
 const Section = styled.section`
   .imgLight,
@@ -39,9 +37,7 @@ const Section = styled.section`
   }
 `;
 
-const About = () => {
-  const theme = useContext(ThemeContext);
-  const dark = theme.state.darkMode;
+const About = ({dark}) => {
 
   return (
     <Section className="row d-flex flex-column-reverse flex-lg-row">
