@@ -1,11 +1,23 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { ThemeContext } from "../context";
 
 const Section = styled.section`
-  img {
+  .imgLight,
+  .imgDark {
     border-radius: 35px !important;
+    height: 30rem;
+  }
+  .imgLight {
     background: var(--background) !important;
     box-shadow: 12px 12px 24px #c18962, -12px -12px 24px #c18962;
-    height: 30rem;
+  }
+  .imgDark {
+    background: #15202b !important;
+    box-shadow: 6px 6px 12px #0d141a, -6px -6px 12px #0d141a;
+  }
+  .dark {
+    color: #f2f2f2;
   }
   p {
     font-family: Regular, "sans-serif";
@@ -17,38 +29,44 @@ const Section = styled.section`
     font-size: 2.5rem;
   }
 
-  @media all and (max-width: 62rem) {
+  @media all and (max-width: 73rem) {
     .img-fluid {
-      padding-left: 18.75% !important;
+      padding-eft: 18.75% !important;
     }
     img {
-      height: auto;
-      width: 80%;
+      width: 100%;
     }
   }
 `;
 
 const About = () => {
+  const theme = useContext(ThemeContext);
+  const dark = theme.state.darkMode;
+
   return (
     <Section className="row d-flex flex-column-reverse flex-lg-row">
       <div className="img-fluid mx-auto d-block  align-self-center col-12 col-lg-4">
         <img
-        loading='lazy'
+          className={dark ? "imgDark" : "imgLight"}
+          loading="lazy"
           src="https://res.cloudinary.com/trive/image/upload/f_auto,q_auto:eco/v1645107738/IMG_20201206_102201.jpg"
           alt="chukwuemeka collins anyanwu"
         />
       </div>
       <div className="col-12 col-lg-7 fw-lighter">
-        <h1 className="display-4 fw-bolder text-start mt-4 mb-2 d-block">
+        <h1
+          className="display-4 fw-bolder text-start mt-4 mb-2 d-block"
+          style={{ color: dark && "#1d9bf0" }}
+        >
           Hi, I'm Chukwuemeka.
         </h1>
 
-        <p>
+        <p className={dark && "dark"}>
           I'm an Electronic and Computer Engineer who loves building things with
           code.
         </p>
 
-        <p>
+        <p className={dark && "dark"}>
           I first became enthralled with programming in 2016, towards the end of
           my service year. A friend of mine called me and told me about a
           program where people were taught and paid to become developers. As a
@@ -58,7 +76,7 @@ const About = () => {
           intrigued by this reality that people could get paid to code.
         </p>
 
-        <p>
+        <p className={dark && "dark"}>
           The city where I lived was far a way from the city my friend told me
           he found this opportunity, so I started coding with my{" "}
           <b style={{ fontFamily: "Bold" }}> phone</b>. I jumped right into
@@ -79,7 +97,7 @@ const About = () => {
           way side and wasn't consistent with it anymore.
         </p>
 
-        <p>
+        <p className={dark && "dark"}>
           But then, in <b style={{ fontFamily: "Bold" }}> 2020</b>, Covid hit
           and suddenly I had more time to commit to code as I was without a job
           that took my whole time. So, I started learning again. Specifically, I
@@ -87,7 +105,7 @@ const About = () => {
           is the language of the web and most versatile.
         </p>
 
-        <p>
+        <p className={dark && "dark"}>
           After a few months of
           <b style={{ fontFamily: "Bold" }}> self-teaching</b>, I knew this was
           what I wanted to do for my career. So, I signed up for a
@@ -99,7 +117,7 @@ const About = () => {
           tech company for 6 months to further hone my skills.
         </p>
 
-        <p>
+        <p className={dark && "dark"}>
           Since having these <b style={{ fontFamily: "Bold" }}> remote</b>{" "}
           working experiences with team members all over the world, I have grown
           as a developer, working alongside{" "}
@@ -108,7 +126,7 @@ const About = () => {
           application.
         </p>
 
-        <p>
+        <p className={dark && "dark"}>
           I'm now seeking a <b style={{ fontFamily: "Bold" }}> full-time</b>{" "}
           role where I can contribute my skills both in coding and business to
           help a company achieve their goals.

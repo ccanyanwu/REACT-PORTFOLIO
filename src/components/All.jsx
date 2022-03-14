@@ -45,7 +45,7 @@ const Section = styled.section`
     text-align: justify;
   }
 
-  .content::after {
+  .content::after{
     content: "";
     background: var(--background);
     width: 0%;
@@ -87,7 +87,7 @@ const Section = styled.section`
   }
 `;
 
-const All = ({ stack }) => {
+const All = ({ stack, dark }) => {
   const portfolio = Projects.filter((project) => project.stack.includes(stack));
 
   return (
@@ -104,7 +104,7 @@ const All = ({ stack }) => {
             style={{ width: "450px" }}
           />
 
-          <div className="content text-white position-absolute w-100 d-flex flex-column justify-content-center align-items-center">
+          <div className='content text-white position-absolute w-100 d-flex flex-column justify-content-center align-items-center'>
             <h3 className="fw-bolder">{project.name}</h3>
 
             <p className="mb-3">{project.description}</p>

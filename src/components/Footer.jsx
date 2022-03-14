@@ -1,10 +1,9 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { ThemeContext } from "../context";
 import { FiGithub, FiTwitter, FiLinkedin, FiMail } from "react-icons/fi";
 
 const Foot = styled.footer`
-   {
-    border-color: var(--secondary) !important;
-  }
   a,
   a:visited {
     color: #ffffff;
@@ -15,8 +14,16 @@ const Foot = styled.footer`
 `;
 const today = new Date().getFullYear();
 const Footer = () => {
+  const theme = useContext(ThemeContext);
+  const dark = theme.state.darkMode;
+
   return (
-    <Foot className="border-top row mt-4 mb-2">
+    <Foot
+      className={`row mt-4 mb-2`}
+      style={{
+        borderTop: dark ? "1px solid #1d9bf0" : "1px solid var(--secondary)",
+      }}
+    >
       <div className="col-sm-8 col-12 col-lg-8 col-xl-10 mt-2 text-center text-sm-start text-lowercase fw-bold align-items-center">
         &copy; {today} CHUKWUEMEKA ANYANWU
       </div>

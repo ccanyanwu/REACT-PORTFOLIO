@@ -1,13 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { ThemeContext } from "../context";
 
 const Header = styled.header`
    {
-    background: linear-gradient(
-      rgba(227, 161, 115, 0.8),
-      rgba(227, 161, 115, 0.9)
-    );
     font-family: Bold, "sans-serif";
     z-index: 100;
   }
@@ -46,11 +43,16 @@ const Header = styled.header`
   }
   .active {
     text-decoration: underline solid var(--secondary);
+  }
+  .active,
+  .activeDark {
     text-decoration-thickness: 2px;
     transition: all 1.3s ease;
-    background: var(--background);
   }
-  
+  .activeDark {
+    background: #1d9bf0;
+  }
+
   img {
     border-radius: 50%;
     height: 2.2em;
@@ -96,7 +98,6 @@ const Header = styled.header`
       margin-left: 0;
     }
     .hamburger > div {
-      background-color: var(--secondary);
       width: 26px;
       height: 1px;
     }
@@ -161,7 +162,6 @@ const Header = styled.header`
     }
 
     section.nav-content .times {
-      color: var(--background);
       cursor: pointer;
       position: absolute;
       right: 34px;
@@ -170,8 +170,15 @@ const Header = styled.header`
     }
   } ;
 `;
+/* background: linear-gradient(
+      rgba(227, 161, 115, 0.8),
+      rgba(227, 161, 115, 0.9)
+    ); */
 
 const Navbar = () => {
+  const theme = useContext(ThemeContext);
+  const dark = theme.state.darkMode;
+
   const hamburgerRefClose = useRef(),
     hamburgerRef = useRef(),
     location = useLocation();
@@ -222,8 +229,12 @@ const Navbar = () => {
           <div>
             <Link
               to="/about"
-              className={`text-white ${
-                location.pathname === "/about" && "active"
+              className={`text-white rounded ${
+                location.pathname !== "/about"
+                  ? null
+                  : dark
+                  ? "activeDark"
+                  : "active"
               }`}
             >
               About
@@ -232,8 +243,12 @@ const Navbar = () => {
           <div>
             <Link
               to="/services"
-              className={`text-white ${
-                location.pathname === "/services" && "active"
+              className={`text-white rounded ${
+                location.pathname !== "/services"
+                  ? null
+                  : dark
+                  ? "activeDark"
+                  : "active"
               }`}
             >
               Services
@@ -242,8 +257,12 @@ const Navbar = () => {
           <div>
             <Link
               to="/portfolio"
-              className={`text-white ${
-                location.pathname === "/portfolio" && "active"
+              className={`text-white rounded ${
+                location.pathname !== "/portfolio"
+                  ? null
+                  : dark
+                  ? "activeDark"
+                  : "active"
               }`}
             >
               Portfolio
@@ -252,8 +271,12 @@ const Navbar = () => {
           <div>
             <Link
               to="/contact"
-              className={`text-white ${
-                location.pathname === "/contact" && "active"
+              className={`text-white rounded ${
+                location.pathname !== "/contact"
+                  ? null
+                  : dark
+                  ? "activeDark"
+                  : "active"
               }`}
             >
               Contact
@@ -263,28 +286,43 @@ const Navbar = () => {
 
         <nav className="sem-show">
           <div className="hamburger hm" onClick={openMenu} ref={wrapperRef}>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div
+              style={{ background: dark ? "#1d9bf0" : "var(--secondary)" }}
+            ></div>
+            <div
+              style={{ background: dark ? "#1d9bf0" : "var(--secondary)" }}
+            ></div>
+            <div
+              style={{ background: dark ? "#1d9bf0" : "var(--secondary)" }}
+            ></div>
           </div>
           <Link to="/">
             <img
               className="img-fluid hide col-md-3 d-block rounded-circle"
               src="https://res.cloudinary.com/trive/image/upload/v1645427737/imageedit_1_2762711690.png"
-              alt="steve Emmanuel headshot "
+              alt="Chukwuemeka Collins Anyanwu's headshot "
             />
           </Link>
         </nav>
         <div className="line"></div>
         <section className="nav-content" ref={hamburgerRef}>
-          <div className="times" ref={hamburgerRefClose} onClick={closeMenu}>
+          <div
+            className={`times`}
+            ref={hamburgerRefClose}
+            onClick={closeMenu}
+            style={{ color: dark ? "#1d9bf0" : "var(--background)" }}
+          >
             &times;
           </div>
           <div>
             <Link
               to="/"
               className={`text-white text-uppercase ${
-                location.pathname === "/" && "active"
+                location.pathname !== "/"
+                  ? null
+                  : dark
+                  ? "activeDark"
+                  : "active"
               }`}
             >
               HOME
@@ -294,7 +332,11 @@ const Navbar = () => {
             <Link
               to="/about"
               className={`text-white text-uppercase ${
-                location.pathname === "/about" && "active"
+                location.pathname !== "/about"
+                  ? null
+                  : dark
+                  ? "activeDark"
+                  : "active"
               }`}
             >
               ABOUT
@@ -304,7 +346,11 @@ const Navbar = () => {
             <Link
               to="/services"
               className={`text-white text-uppercase ${
-                location.pathname === "/services" && "active"
+                location.pathname !== "/services"
+                  ? null
+                  : dark
+                  ? "activeDark"
+                  : "active"
               }`}
             >
               SERVICES
@@ -314,7 +360,11 @@ const Navbar = () => {
             <Link
               to="/portfolio"
               className={`text-white text-uppercase ${
-                location.pathname === "/portfolio" && "active"
+                location.pathname !== "/portfolio"
+                  ? null
+                  : dark
+                  ? "activeDark"
+                  : "active"
               }`}
             >
               PORTFOLIO
@@ -324,7 +374,11 @@ const Navbar = () => {
             <Link
               to="/contact"
               className={`text-white text-uppercase ${
-                location.pathname === "/contact" ? "active" : ""
+                location.pathname !== "/contact"
+                  ? null
+                  : dark
+                  ? "activeDark"
+                  : "active"
               }`}
             >
               CONTACT

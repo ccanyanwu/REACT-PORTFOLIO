@@ -16,7 +16,6 @@ const Section = styled.section`
     margin: 20px;
     position: relative;
     overflow: hidden;
-    border: 2px solid var(--secondary);
     transition: color 0.5s;
     z-index: 1;
     font-size: 1.0625rem;
@@ -28,7 +27,6 @@ const Section = styled.section`
     content: "";
     position: absolute;
     z-index: -1;
-    background: var(--secondary);
     height: 150px;
     width: 200px;
     border-radius: 50%;
@@ -36,8 +34,15 @@ const Section = styled.section`
   .tab-nav > *::before {
     top: 100%;
     left: 100%;
-    transition: all .73s;
+    transition: all 0.73s;
   }
+  .tab-navl::before {
+    background: var(--secondary);
+  }
+  .tab-navd::before {
+    background: #1d9bf0;
+  }
+
   .tab-nav > * > button:hover {
     color: #ffffff;
   }
@@ -45,16 +50,21 @@ const Section = styled.section`
     top: -30px;
     left: -30px;
   }
-  
 
   .btn-nav {
     box-shadow: none;
     color: #ffffff;
   }
 
+  .active,
+  .dark {
+    transition: all 0.3s ease;
+  }
   .active {
     background-color: var(--secondary) !important;
-    transition: all .3s ease;
+  }
+  .dark {
+    background-color: #1d9bf0 !important;
   }
 
   @media all and (max-width: 400px) {
@@ -64,7 +74,7 @@ const Section = styled.section`
   }
 `;
 
-const Portfolio = () => {
+const Portfolio = ({ dark }) => {
   const [stack, setStack] = useState("all");
 
   return (
@@ -77,35 +87,60 @@ const Portfolio = () => {
         <div className="tab-nav d-flex flex-wrap justify-content-center justify-lg-content-start">
           <div
             onClick={() => setStack("all")}
-            className={` ${stack === "all" ? "active" : null}`}
+            className={`rounded ${
+              stack !== "all" ? null : dark ? "dark" : "active"
+            } ${dark ? "tab-navd" : "tab-navl"}`}
+            style={{
+              border: dark ? "2px solid #1d9bf0" : "2px solid var(--secondary)",
+            }}
           >
             <button className="btn btn-nav ">All</button>
           </div>
 
           <div
             onClick={() => setStack("react")}
-            className={stack === "react" ? "active rounded" : null}
+            className={`rounded ${
+              stack !== "react" ? null : dark ? "dark" : "active"
+            } ${dark ? "tab-navd" : "tab-navl"}`}
+            style={{
+              border: dark ? "2px solid #1d9bf0" : "2px solid var(--secondary)",
+            }}
           >
             <button className="btn btn-nav">React</button>
           </div>
 
           <div
             onClick={() => setStack("javascript")}
-            className={stack === "javascript" ? "active rounded" : null}
+            className={`rounded ${
+              stack !== "javascript" ? null : dark ? "dark" : "active"
+            } ${dark ? "tab-navd" : "tab-navl"}`}
+            style={{
+              border: dark ? "2px solid #1d9bf0" : "2px solid var(--secondary)",
+            }}
           >
             <button className="btn btn-nav">Javascript</button>
           </div>
 
           <div
             onClick={() => setStack("node")}
-            className={stack === "node" ? "active rounded" : null}
+            className={`rounded ${
+              stack !== "node" ? null : dark ? "dark" : "active"
+            } ${dark ? "tab-navd" : "tab-navl"}`}
+            style={{
+              border: dark ? "2px solid #1d9bf0" : "2px solid var(--secondary)",
+            }}
           >
             <button className="btn btn-nav">NodeJS</button>
           </div>
 
           <div
             onClick={() => setStack("html")}
-            className={stack === "html" ? "active rounded" : null}
+            className={`rounded ${
+              stack !== "html" ? null : dark ? "dark" : "active"
+            } ${dark ? "tab-navd" : "tab-navl"}`}
+            style={{
+              border: dark ? "2px solid #1d9bf0" : "2px solid var(--secondary)",
+            }}
           >
             <button className="btn btn-nav">HTML/CSS</button>
           </div>
@@ -113,7 +148,7 @@ const Portfolio = () => {
       </section>
 
       {/* featured Projects */}
-      <All stack={stack} />
+      <All stack={stack} dark={dark} />
     </Section>
   );
 };

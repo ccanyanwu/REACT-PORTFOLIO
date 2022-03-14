@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { MdLaptopMac, MdPhonelink } from "react-icons/md";
-import { IoRocketOutline } from 'react-icons/io5';
+import { IoRocketOutline } from "react-icons/io5";
 import { FaCogs, FaTerminal } from "react-icons/fa";
+import { FiGitlab } from "react-icons/fi";
 import {
   DiHtml5,
   DiCss3,
@@ -11,9 +12,9 @@ import {
   DiGithubBadge,
   DiBootstrap,
   DiVisualstudio,
+  DiBitbucket,
   DiW3C,
 } from "react-icons/di";
-
 
 const Section = styled.section`
   .lead {
@@ -26,7 +27,7 @@ const Section = styled.section`
     color: var(--background);
     font-size: 7rem;
   }
-  .flex-wrap > div{
+  .flex-wrap > div {
     margin: 1rem;
   }
   .fs-3,
@@ -42,15 +43,14 @@ const Section = styled.section`
     transition: all 0.3s ease-in;
     cursor: pointer;
   }
-  
 `;
 
-const Services = () => {
+const Services = ({ dark }) => {
   return (
     <Section>
       <h1 className="display-3 text-center ">Services Offered</h1>
 
-      <p className=" lead text-center mx-auto">
+      <p className={`lead text-center mx-auto ${dark && "text-white"}`}>
         Web development has been my bread and butter for more than 3 years now.
         During that time I've discovered that I can help startups and companies
         with the following services
@@ -59,7 +59,10 @@ const Services = () => {
       <div className="row row-cols-1 row-cols-lg-3 g-4 mt-4">
         <div className="col">
           <div className="card h-100 shadow-lg py-5 px-3 rounded">
-            <MdLaptopMac className="icon mx-auto" />
+            <MdLaptopMac
+              className="icon mx-auto"
+              style={{ color: dark && "#1d9bf0" }}
+            />
             <div className="card-body">
               <h5 className="card-title text-center fw-bolder">
                 WEB DEVELOPMENT
@@ -74,7 +77,10 @@ const Services = () => {
 
         <div className="col">
           <div className="card h-100 shadow-lg py-5 px-3 rounded">
-            <MdPhonelink className="icon mx-auto" />
+            <MdPhonelink
+              className="icon mx-auto"
+              style={{ color: dark && "#1d9bf0" }}
+            />
             <div className="card-body">
               <h5 className="card-title text-center fw-bolder">
                 RESPONSIVENESS
@@ -90,7 +96,10 @@ const Services = () => {
 
         <div className="col">
           <div className="card h-100 shadow-lg py-5 px-3 rounded">
-            <IoRocketOutline className="icon mx-auto" />
+            <IoRocketOutline
+              className="icon mx-auto"
+              style={{ color: dark && "#1d9bf0" }}
+            />
             <div className="card-body">
               <h5 className="card-title text-center fw-bolder">SPEED</h5>
               <p className="card-text text-center">
@@ -103,63 +112,79 @@ const Services = () => {
       </div>
 
       <h2 className="display-4 mt-5">My Toolbox</h2>
-      <p className="fs-3 text-start mx-auto">
+      <p className={`fs-3 text-start mx-auto ${dark && 'text-white'}`}>
         The skills, tools and technologies I use to bring your products to life:
       </p>
       <div className="d-flex flex-wrap justify-content-evenly">
         <div className="text-center tool p-2">
           <DiHtml5 />
-          <p className="mt-2 fw-bolder">HTML5</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>HTML5</p>
         </div>
 
         <div className="text-center tool p-2">
           <DiCss3 />
-          <p className="mt-2 fw-bolder">CSS3</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>CSS3</p>
         </div>
 
         <div className="text-center tool p-2">
           <DiJavascript1 />
-          <p className="mt-2 fw-bolder">JavaScript</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>JavaScript</p>
         </div>
 
         <div className="text-center tool p-2">
           <DiReact />
-          <p className="mt-2 fw-bolder">React</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>React</p>
         </div>
 
         <div className="text-center tool p-2">
           <DiGit />
-          <p className="mt-2 fw-bolder">Git</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>Git</p>
         </div>
 
         <div className="text-center tool p-2">
           <DiGithubBadge />
-          <p className="mt-2 fw-bolder">Github</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>Github</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <DiBitbucket />
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>Bitbucket</p>
+        </div>
+
+        <div className="text-center tool p-2">
+          <FiGitlab />
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>Gitlab</p>
         </div>
 
         <div className="text-center tool p-2">
           <FaCogs />
-          <p className="mt-2 fw-bolder">RESTful APIs</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>
+            RESTful APIs
+          </p>
         </div>
 
         <div className="text-center tool p-2">
           <DiBootstrap />
-          <p className="mt-2 fw-bolder">Bootstrap</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>Bootstrap</p>
         </div>
 
         <div className="text-center tool p-2">
           <DiVisualstudio />
-          <p className="mt-2 fw-bolder">VS Code</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>VS Code</p>
         </div>
 
         <div className="text-center tool p-2">
           <DiW3C />
-          <p className="mt-2 fw-bolder">Web Accessibility</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>
+            Web Accessibility
+          </p>
         </div>
 
         <div className="text-center tool p-2">
           <FaTerminal />
-          <p className="mt-2 fw-bolder">Command Line</p>
+          <p className={`mt-2 fw-bolder ${dark && "text-white"}`}>
+            Command Line
+          </p>
         </div>
       </div>
     </Section>

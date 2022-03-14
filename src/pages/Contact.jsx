@@ -140,7 +140,7 @@ const Section = styled.section`
   }
 `;
 
-const Contact = () => {
+const Contact = ({dark}) => {
   const senderRef = useRef(),
     emailRef = useRef(),
     messageRef = useRef();
@@ -168,12 +168,12 @@ const Contact = () => {
     <Section>
       <h1 className="display-4">Get In Touch</h1>
 
-      <p className="form-para mt-5 w-lg-50">
+      <p className={`form-para mt-5 w-lg-50 ${dark && "text-white"}`}>
         Dropping a line to say good day, ask for my resume or see if we can
         build something amazing together? I’d love to hear from you!
       </p>
 
-      <p className="form-para">
+      <p className={`form-para ${dark && "text-white"}`}>
         Fill in your info in the form below and I look forward to hearing from
         you!
       </p>
@@ -254,7 +254,7 @@ const Contact = () => {
             </div>
             <div className="link">
               <a
-                href="https://facebook.com.com/ccanyanwu"
+                href="https://facebook.com/ccanyanwu"
                 target="blank"
                 rel="noreferrer"
               >

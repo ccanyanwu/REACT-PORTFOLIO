@@ -18,15 +18,14 @@
 }
 
 /* css variables */
-:root{
-  --bacground:#15202b !important;
-  --seondary:#1d9bf0 !important;
+:root {
+  --bacground: rgb(21, 32, 43) !important;
+  --seondary: #1d9bf0 !important;
 
-  --background:#e3a173 !important;
-  --secondary:#293845 !important;
+  --background: #e3a173 !important;
+  --secondary: #293845 !important;
   --hover: rgb(36, 36, 36);
 }
-
 /* CSS RESET */
 *,
 *::before,
@@ -37,9 +36,57 @@
 }
 
 body {
-  background: var(--background) ;
   color: #f5f5f5;
-  font-family: Regular , 'sans-serif';
+  font-family: Regular, "sans-serif";
+}
+.App {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+.Apps::-webkit-scrollbar {
+  display: none !important;
 }
 
+@media all and (max-width: 75rem) {
+  .App {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
 
+@media all and (max-width: 35rem) {
+  .App {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .darkbg,
+  .lightbg {
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+  }
+  .lightbg {
+    background: linear-gradient(
+        rgba(227, 161, 115, 0.8),
+        rgba(227, 161, 115, 0.9)
+      ),
+      url(https://res.cloudinary.com/trive/image/upload/v1645427737/imageedit_1_2762711690.png)
+        no-repeat center center fixed;
+  }
+  .darkbg {
+    background: linear-gradient(rgba(21, 32, 43, 0.8), rgba(21, 32, 43, 0.9)),
+      url(https://res.cloudinary.com/trive/image/upload/v1645427737/imageedit_1_2762711690.png)
+        no-repeat center center fixed;
+  }
+}

@@ -1,10 +1,16 @@
 import resume from "../resume/Resume.pdf";
-import ParticlesBg from "particles-bg";
 import styled from "styled-components";
+import '../index.css'
 
 const Header = styled.header`
    {
     paddig-top: 10rem;
+  }
+  .darkColor {
+    color: #1d9bf0 !important;
+  }
+  .darkBackground {
+    background-color: #1d9bf0 !important;
   }
   h2,
   hr + p,
@@ -98,48 +104,38 @@ const Header = styled.header`
       margin-top: -5rem !important;
       padding-bottom: 2rem;
     }
-     {
-      background: linear-gradient(
-          rgba(227, 161, 115, 0.8),
-          rgba(227, 161, 115, 0.9)
-        ),
-        url(https://res.cloudinary.com/trive/image/upload/v1645427737/imageedit_1_2762711690.png)
-          no-repeat center center fixed;
-      background-attachment: fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      position: relative;
-    }
+    
     .hide {
       display: none !important;
     }
-    h2 {
-      color: var(--secondary) !important;
-    }
+    
     hr {
       background: #ffffff;
     }
-    .profile_summary + a{
+    .profile_summary + a {
       text-decoration: none;
-    } .profile_summary + a > button {
+    }
+    .profile_summary + a > button {
       margin: 0 auto;
       display: block;
     }
   }
 `;
 
-const Home = () => {
+const Home = ({dark}) => {
+
   return (
-    <Header className="profile row mt-5">
-      <ParticlesBg num={1} color="#fa3b86" type="polygon" bg={true} />
-      <h2 className="col-12 col-md-4 text-uppercase text-center text-sm-start">
-        A<span>NY</span>AN
-        <span>W</span>U <br />
-        <span>C</span>H<span>U</span>K<span>Wu</span>EM
-        <span>E</span>K<span>A</span>
-        <br />C<span>OL</span>LI<span>N</span>S
+    <Header className={`profile row mt-5 ${dark ? 'darkbg' : 'lightbg'}`}>
+      <h2 className={`col-12 col-md-4 text-uppercase text-center text-sm-start`}>
+        A<span className={dark && "darkColor"}>NY</span>AN
+        <span className={dark && "darkColor"}>W</span>U <br />
+        <span className={dark && "darkColor"}>C</span>H
+        <span className={dark && "darkColor"}>U</span>K
+        <span className={dark && "darkColor"}>WU</span>EM
+        <span className={dark && "darkColor"}>E</span>K
+        <span className={dark && "darkColor"}>A</span>
+        <br />C<span className={dark && "darkColor"}>OL</span>LI
+        <span className={dark && "darkColor"}>N</span>S
       </h2>
       <img
         className="img-fluid hide col-md-3 d-block rounded h-100"
@@ -150,12 +146,19 @@ const Home = () => {
 
       <div className="col-12 col-md-4">
         <div className="d-flex ">
-          <hr className="algn-self-start w-25" />
-          <p className="text-center  pt-1 pl-2 font-weight-bold ">
+          <hr className="w-25" style={{ background: dark && "#1d9bf0" }} />
+          <p
+            className={`text-center  pt-1 pl-2 font-weight-bold ${
+              dark && "darkColor"
+            }`}
+          >
             FRONT-END ENGINEER
           </p>
         </div>
-        <p className="profile_summary text-center text-sm-start mt-5">
+        <p
+          className={`profile_summary text-center text-sm-start mt-5
+          ${dark && "darkColor"}`}
+        >
           Hi 👋🏾, I'm <span className="text-white">Chukwuemeka,</span> <br />A
           self-taught <span className="text-white">Front-end </span>
           Engineer and a school-taught <span>
@@ -169,17 +172,17 @@ const Home = () => {
           download="Chukwuemeka'sCV.pdf"
           rel="noreferrer"
         >
-          {/* <button className="btn btn-large btn-primary text-decoration-none text-white outline-none border-0 rounded-pill w-50 ">
-            Download CV <BsCloudArrowDown className="fs-3 ms-2"/>
-          </button> */}
-
-          <button className="flex align-items-center border-0 shadow-lg">
+          <button
+            className={`flex align-items-center border-0 shadow-lg ${
+              dark && "darkBackground"
+            }`}
+          >
             <svg
               height="24"
               width="24"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              className='pb-1'
+              className="pb-1"
             >
               <path d="M0 0h24v24H0z" fill="none"></path>
               <path
