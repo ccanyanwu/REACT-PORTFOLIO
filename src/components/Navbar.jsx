@@ -2,6 +2,7 @@ import { useEffect, useRef, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { ThemeContext } from "../context";
+import { BiHome, BiUser, BiEnvelope, BiBriefcase, BiCog } from "react-icons/bi";
 
 const Header = styled.header`
    {
@@ -325,9 +326,11 @@ const Navbar = () => {
                   : "active"
               }`}
             >
+              <BiHome className="fw-bolder fs-3 me-2 mb-2" />
               HOME
             </Link>
           </div>
+
           <div>
             <Link
               to="/about"
@@ -339,9 +342,11 @@ const Navbar = () => {
                   : "active"
               }`}
             >
+              <BiUser className="fw-bolder fs-3 me-2 mb-2" />
               ABOUT
             </Link>
           </div>
+
           <div>
             <Link
               to="/services"
@@ -353,9 +358,11 @@ const Navbar = () => {
                   : "active"
               }`}
             >
+              <BiCog className="fw-bolder fs-3 me-2 mb-2" />
               SERVICES
             </Link>
           </div>
+
           <div>
             <Link
               to="/portfolio"
@@ -367,9 +374,11 @@ const Navbar = () => {
                   : "active"
               }`}
             >
+              <BiBriefcase className="fw-bolder fs-3 me-2 mb-2" />
               PORTFOLIO
             </Link>
           </div>
+
           <div>
             <Link
               to="/contact"
@@ -381,6 +390,7 @@ const Navbar = () => {
                   : "active"
               }`}
             >
+              <BiEnvelope className="fw-bolder fs-3 me-2 mb-2" />
               CONTACT
             </Link>
           </div>

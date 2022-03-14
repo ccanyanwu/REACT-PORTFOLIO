@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../context";
 import styled from "styled-components";
-import Sun from "../images/sun.png";
-import Moon from "../images/moon.png";
+import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
 
 const Div = styled.div`
    {
@@ -77,8 +76,17 @@ const Toggle = () => {
         border: dark ? "2px solid #1d9bf0" : "2px solid var(--secondary)",
       }}
     >
-      <img src={Sun} alt="sun" className="t-icon" onClick={handleLight} />
-      <img src={Moon} alt="moon" className="t-icon" onClick={handleDark} />
+      <BsFillSunFill
+        className="t-icon"
+        style={{ color: "var(--background)" }}
+        onClick={handleLight}
+      />
+      <BsMoonFill
+        className="t-icon"
+        style={{ color: "#15202b" }}
+        onClick={handleDark}
+      />
+
       <div
         className="t-button rounded-circle position-absolute"
         id={theme.state.darkMode ? "right" : "left"}

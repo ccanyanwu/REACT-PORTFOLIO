@@ -200,7 +200,10 @@ const Contact = ({dark}) => {
               </label>
             </div>
 
-            <button className="submit-btn d-flex align-items-center">
+            <button
+              className="submit-btn d-flex align-items-center"
+              style={{ background: dark && "#1d9bf0" }}
+            >
               <div className="svg-wrapper-1">
                 <div className="svg-wrapper">
                   <svg
