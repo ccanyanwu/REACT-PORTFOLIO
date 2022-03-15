@@ -1,8 +1,9 @@
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
+  useLocation,
 } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
@@ -17,6 +18,7 @@ import Services from "./pages/Services";
 import Toggle from "./components/Toggle";
 import { ThemeContext } from "./context";
 import { useContext } from "react";
+import Loader from "./components/Loader";
 
 const Div = styled.div`
   .dark {
@@ -28,26 +30,39 @@ const Div = styled.div`
 `;
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
-  //const location = useLocation();
+  const location = useLocation().pathname;
 
-  return (
+  //preloader
+  const handleLoading = () => setLoading(false);
+
+  useEffect(() => {
+    window.addEventListener("load", handleLoading);
+    return () => window.removeEventListener("load", handleLoading);
+  }, []);
+
+  return loading ? (
+    <Loader />
+  ) : (
     <Div>
-      <Router /* className={`${location.pathname === "/" ? "Apps" : null}`} */>
-        <div className={`App ${darkMode ? "dark" : "light"} `}>
-          <Navbar />
-          <Toggle />
-          <Routes>
-            <Route exact path="/" element={<Home dark={darkMode} />} />
-            <Route path="/about" element={<About dark={darkMode} />} />
-            <Route path="/services" element={<Services dark={darkMode} />} />
-            <Route path="/portfolio" element={<Portfolio dark={darkMode} />} />
-            <Route path="/contact" element={<Contact dark={darkMode} />} />
-          </Routes>
-          <Footer />
-        </div>
-      </Router>
+      <div
+        className={`App ${darkMode ? "dark" : "light"} ${
+          location === "/" && "Apps"
+        }`}
+      >
+        <Navbar />
+        <Toggle />
+        <Routes>
+          <Route exact path="/" element={<Home dark={darkMode} />} />
+          <Route path="/about" element={<About dark={darkMode} />} />
+          <Route path="/services" element={<Services dark={darkMode} />} />
+          <Route path="/portfolio" element={<Portfolio dark={darkMode} />} />
+          <Route path="/contact" element={<Contact dark={darkMode} />} />
+        </Routes>
+        <Footer />
+      </div>
       <ToastContainer autoClose={3000} />
     </Div>
   );
