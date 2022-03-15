@@ -127,7 +127,17 @@ const Header = styled.header`
       animation-fill-mode: forwards;
       z-index: 99;
     }
-
+    section.nav-content::-webkit-scrollbar {
+      width: 10px;
+    }
+    section.nav-content::-webkit-scrollbar-track {
+      background: #15202b;
+    }
+    section.nav-content::-webkit-scrollbar-thumb {
+      background: #1d9bf0;
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
     @keyframes openMenu {
       from {
         left: -20em;
@@ -171,10 +181,6 @@ const Header = styled.header`
     }
   } ;
 `;
-/* background: linear-gradient(
-      rgba(227, 161, 115, 0.8),
-      rgba(227, 161, 115, 0.9)
-    ); */
 
 const Navbar = () => {
   const theme = useContext(ThemeContext);
@@ -185,12 +191,15 @@ const Navbar = () => {
     location = useLocation();
   const wrapperRef = useRef();
 
+  //close menu
   const closeMenu = () => {
     hamburgerRef.current.style.animationName = "closeMenu";
     setTimeout(() => {
       hamburgerRef.current.style.display = "none";
     }, 1000);
   };
+
+  //open menu
   const openMenu = () => {
     hamburgerRef.current.style.display = "block";
     hamburgerRef.current.style.animationName = "openMenu";
