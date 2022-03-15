@@ -1,8 +1,4 @@
-import {
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -30,17 +26,14 @@ const Div = styled.div`
 `;
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   const location = useLocation().pathname;
 
-  //preloader
-  const handleLoading = () => setLoading(false);
-
   useEffect(() => {
-    window.addEventListener("load", handleLoading);
-    return () => window.removeEventListener("load", handleLoading);
+    setLoading(true);
+    setTimeout(() => setLoading(false), 3000);
   }, []);
 
   return loading ? (
