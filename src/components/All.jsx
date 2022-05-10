@@ -87,7 +87,7 @@ const Section = styled.section`
   }
 `;
 
-const All = ({ stack, dark }) => {
+const All = ({ stack}) => {
   const portfolio = Projects.filter((project) => project.stack.includes(stack));
 
   return (

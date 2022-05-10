@@ -36,9 +36,7 @@ function App() {
     setTimeout(() => setLoading(false), 3000);
   }, []);
 
-  return loading ? (
-    <Loader />
-  ) : (
+  return (
     <Div>
       <div
         className={`App ${darkMode ? "dark" : "light"} ${

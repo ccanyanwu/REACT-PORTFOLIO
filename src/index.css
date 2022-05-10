@@ -19,7 +19,7 @@
 
 /* css variables */
 :root {
-  --bacground: #15202b !important;
+  --bacground: #70c330 !important;
   --seondary: #1d9bf0 !important;
 
   --background: #e3a173 !important;
@@ -67,6 +67,9 @@ body {
 }
 
 @media all and (max-width: 75rem) {
+  .App::-webkit-scrollbar {
+  display: none !important;
+}
   .App {
     padding-left: 5rem;
     padding-right: 5rem;
