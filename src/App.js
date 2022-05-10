@@ -14,7 +14,7 @@ import Services from "./pages/Services";
 import Toggle from "./components/Toggle";
 import { ThemeContext } from "./context";
 import { useContext } from "react";
-import Loader from "./components/Loader";
+//import Loader from "./components/Loader";
 
 const Div = styled.div`
   .dark {
@@ -32,6 +32,7 @@ function App() {
   const location = useLocation().pathname;
 
   useEffect(() => {
+    loading;
     setLoading(true);
     setTimeout(() => setLoading(false), 3000);
   }, []);
