@@ -1,4 +1,4 @@
-import resume from "../resume/Resume.pdf";
+import resume from "../resume/CHUKWUEMEKA COLLINS ANYANWU - Software Engineer.pdf";
 import { Header } from "./Home.styled";
 import {motion} from 'framer-motion'
 import "../index.css";
@@ -42,7 +42,7 @@ const Home = ({ dark }) => {
           Engineer and a school-taught <span>
             Electronics and Computer
           </span>{" "}
-          Engineer based in <span className="text-white">Nigeria.</span>
+          Engineer based in <span className="text-white">Canada.</span>
         </p>
         <a
           href={resume}

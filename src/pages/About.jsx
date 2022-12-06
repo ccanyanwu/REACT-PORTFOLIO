@@ -9,7 +9,7 @@ const About = ({ dark }) => {
           <img
             className={dark ? "imgDark" : "imgLight"}
             loading="lazy"
-            src="https://res.cloudinary.com/trive/image/upload/f_auto,q_auto:eco/v1645107738/IMG_20201206_102201.jpg"
+            src="https://res.cloudinary.com/trive/image/upload/q_auto:eco/v1670288333/PXL_20221106_214328354.jpg"
             alt="chukwuemeka collins anyanwu"
           />
         </Fade>

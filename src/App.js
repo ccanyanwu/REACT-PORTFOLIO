@@ -14,7 +14,7 @@ import Services from "./pages/Services";
 import Toggle from "./components/Toggle";
 import { ThemeContext } from "./context";
 import { useContext } from "react";
-//import Loader from "./components/Loader";
+import Loader from "./components/Loader";
 
 const Div = styled.div`
   .dark {
@@ -31,30 +31,34 @@ function App() {
   const darkMode = theme.state.darkMode;
   const location = useLocation().pathname;
 
-  useEffect(() => {
-    loading;
+  useEffect(() => {    
     setLoading(true);
     setTimeout(() => setLoading(false), 3000);
   }, []);
 
   return (
     <Div>
-      <div
-        className={`App ${darkMode ? "dark" : "light"} ${
-          location === "/" && "Apps"
-        }`}
-      >
-        <Navbar />
-        <Toggle />
-        <Routes>
-          <Route exact path="/" element={<Home dark={darkMode} />} />
-          <Route path="/about" element={<About dark={darkMode} />} />
-          <Route path="/services" element={<Services dark={darkMode} />} />
-          <Route path="/portfolio" element={<Portfolio dark={darkMode} />} />
-          <Route path="/contact" element={<Contact dark={darkMode} />} />
-        </Routes>
-        <Footer />
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div
+          className={`App ${darkMode ? "dark" : "light"} ${
+            location === "/" && "Apps"
+          }`}
+        >
+          <Navbar />
+          <Toggle />
+          <Routes>
+            <Route exact path="/" element={<Home dark={darkMode} />} />
+            <Route path="/about" element={<About dark={darkMode} />} />
+            <Route path="/services" element={<Services dark={darkMode} />} />
+            <Route path="/portfolio" element={<Portfolio dark={darkMode} />} />
+            <Route path="/contact" element={<Contact dark={darkMode} />} />
+          </Routes>
+          <Footer />
+        </div>
+      )}
+
       <ToastContainer autoClose={3000} />
     </Div>
   );
