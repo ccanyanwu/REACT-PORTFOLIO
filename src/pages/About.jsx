@@ -112,7 +112,8 @@ Dedicated to implementing DevOps best practices, my unwavering passion drives ef
 - Experience with configuration management tools like Ansible for system configurations.<br />
 - Proficient in version control systems, particularly Git for collaborative coding efforts.<br />
 - Knowledgeable about monitoring and logging tools: Prometheus, Grafana, and CloudWatch<br />
-<p className={dark && "dark"}> 
+<br />
+  <p className={dark && "dark"}> 
 Confident in my ability to contribute meaningfully to DevOps initiatives, I bring a wealth of experience and a commitment to excellence in enhancing efficiency and reliability across software development processes.
 </p>        
 </p>
