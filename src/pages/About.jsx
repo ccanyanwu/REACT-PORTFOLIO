@@ -104,7 +104,7 @@ My proficiency extends to scripting languages such as JavaScript, Python, and Ba
 Dedicated to implementing DevOps best practices, my unwavering passion drives efficiency, scalability, and reliability within software development life cycles. As evidenced by my participation in the multiCloud Specialization, I have successfully completed projects reflecting real-life scenarios. Notably, I led a project migrating on-premises infrastructure to AWS, utilizing fundamental services like EC2, S3, and RDS. These projects showcase my ability to skillfully employ cloud technologies for seamless transformations and enhanced infrastructure efficiency.
 </p>
 <p className={dark && "dark"}>        
-I'm now seeking a <b style={{ fontFamily: "Bold" }}> Key Areas of Expertise:</b> <br />
+<b style={{ fontFamily: "Bold" }}> Key Areas of Expertise:</b> <br />
 - Strong grasp of cloud computing platforms: AWS, Microsoft Azure, and Google Cloud Platform (GCP).<br />
 - Proficient in Infrastructure-as-Code (IaC) principles using tools like Terraform and CloudFormation.<br />
 - Expertise in containerization technologies (Docker) and container orchestration using Kubernetes.<br />
@@ -112,9 +112,10 @@ I'm now seeking a <b style={{ fontFamily: "Bold" }}> Key Areas of Expertise:</b>
 - Experience with configuration management tools like Ansible for system configurations.<br />
 - Proficient in version control systems, particularly Git for collaborative coding efforts.<br />
 - Knowledgeable about monitoring and logging tools: Prometheus, Grafana, and CloudWatch<br />
-
+<p className={dark && "dark"}> 
 Confident in my ability to contribute meaningfully to DevOps initiatives, I bring a wealth of experience and a commitment to excellence in enhancing efficiency and reliability across software development processes.
-        </p>
+</p>        
+</p>
       </div>
     </Section>
   );
