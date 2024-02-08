@@ -33,12 +33,12 @@ const Home = ({ dark }) => {
         <div className="d-flex ">
           <hr className="w-25" />
           <p className="text-center  pt-1 pl-2 font-weight-bold">
-            FRONT-END ENGINEER
+            DEVOPS/CLOUD ENGINEER
           </p>
         </div>
         <p className="profile_summary text-center text-sm-start mt-5">
           Hi 👋🏾, I'm <span className="text-white">Chukwuemeka,</span> <br />A
-          self-taught <span className="text-white">Front-end </span>
+          self-taught <span className="text-white">DevOps/Cloud </span>
           Engineer and a school-taught <span>
             Electronics and Computer
           </span>{" "}
