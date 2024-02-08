@@ -103,6 +103,7 @@ My proficiency extends to scripting languages such as JavaScript, Python, and Ba
 
 Dedicated to implementing DevOps best practices, my unwavering passion drives efficiency, scalability, and reliability within software development life cycles. As evidenced by my participation in the multiCloud Specialization, I have successfully completed projects reflecting real-life scenarios. Notably, I led a project migrating on-premises infrastructure to AWS, utilizing fundamental services like EC2, S3, and RDS. These projects showcase my ability to skillfully employ cloud technologies for seamless transformations and enhanced infrastructure efficiency.
 </p>
+<p className={dark && "dark"}>        
 I'm now seeking a <b style={{ fontFamily: "Bold" }}> Key Areas of Expertise:</b> <br />
 - Strong grasp of cloud computing platforms: AWS, Microsoft Azure, and Google Cloud Platform (GCP).<br />
 - Proficient in Infrastructure-as-Code (IaC) principles using tools like Terraform and CloudFormation.<br />
