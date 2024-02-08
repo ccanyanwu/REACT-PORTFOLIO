@@ -27,7 +27,7 @@ const About = ({ dark }) => {
           code.
         </p>
 
-        <p className={dark && "dark"}>
+{/*         <p className={dark && "dark"}>
           I first became enthralled with programming in 2016, towards the end of
           my service year. A friend of mine called me and told me about a
           program where people were taught and paid to become developers. As a
@@ -92,8 +92,9 @@ const About = ({ dark }) => {
           role where I can contribute my skills both in coding and business to
           help a company achieve their goals.
         </p>
-        <p className={dark && "dark"}>
+        <p className={dark && "dark"}> */}
 
+<p className={dark && "dark"}>
 I am a seasoned DevOps Engineer with over five years of hands-on experience, specializing in infrastructure automation, code migration, configuration management, and system administration. My expertise spans a diverse set of DevOps tools and technologies, including Jenkins, Docker, Kubernetes, AWS, Git, Chef, Puppet, Ansible, Terraform, Grafana, Prometheus, Linux, and Windows PowerShell DSC.
 
 Proficient in developing and managing CI/CD pipelines, I streamline software delivery processes and possess a deep understanding of cloud computing and Infrastructure-as-Code (IaC) principles. With a proven track record, I collaborate with cross-functional teams to optimize software development and deployment workflows, demonstrating an aptitude for architecting robust and scalable solutions.
@@ -101,15 +102,15 @@ Proficient in developing and managing CI/CD pipelines, I streamline software del
 My proficiency extends to scripting languages such as JavaScript, Python, and Bash, enhancing my ability to tackle diverse challenges. Exceptional interpersonal skills facilitate seamless communication and harmonious collaboration across multifaceted teams and roles.
 
 Dedicated to implementing DevOps best practices, my unwavering passion drives efficiency, scalability, and reliability within software development life cycles. As evidenced by my participation in the multiCloud Specialization, I have successfully completed projects reflecting real-life scenarios. Notably, I led a project migrating on-premises infrastructure to AWS, utilizing fundamental services like EC2, S3, and RDS. These projects showcase my ability to skillfully employ cloud technologies for seamless transformations and enhanced infrastructure efficiency.
-
-I'm now seeking a <b style={{ fontFamily: "Bold" }}> Key Areas of Expertise:</b>{" "}
-- Strong grasp of cloud computing platforms: AWS, Microsoft Azure, and Google Cloud Platform (GCP).{" "}
-- Proficient in Infrastructure-as-Code (IaC) principles using tools like Terraform and CloudFormation.{" "}
-- Expertise in containerization technologies (Docker) and container orchestration using Kubernetes.{" "}
-- Knowledgeable in CI/CD pipelines, with hands-on experience using Jenkins.{" "}
-- Experience with configuration management tools like Ansible for system configurations.{" "}
-- Proficient in version control systems, particularly Git for collaborative coding efforts.{" "}
-- Knowledgeable about monitoring and logging tools: Prometheus, Grafana, and CloudWatch{" "}
+</p>
+I'm now seeking a <b style={{ fontFamily: "Bold" }}> Key Areas of Expertise:</b> <br />
+- Strong grasp of cloud computing platforms: AWS, Microsoft Azure, and Google Cloud Platform (GCP).<br />
+- Proficient in Infrastructure-as-Code (IaC) principles using tools like Terraform and CloudFormation.<br />
+- Expertise in containerization technologies (Docker) and container orchestration using Kubernetes.<br />
+- Knowledgeable in CI/CD pipelines, with hands-on experience using Jenkins.<br />
+- Experience with configuration management tools like Ansible for system configurations.<br />
+- Proficient in version control systems, particularly Git for collaborative coding efforts.<br />
+- Knowledgeable about monitoring and logging tools: Prometheus, Grafana, and CloudWatch<br />
 
 Confident in my ability to contribute meaningfully to DevOps initiatives, I bring a wealth of experience and a commitment to excellence in enhancing efficiency and reliability across software development processes.
         </p>
